@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  height: 120px;
+  width:100vw;
+  position: fixed;
+  align-items: center;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0em 1.5em;
+  
+}
+
+nav span.logo {
+  font-family: "Bungee", sans-serif;
+  font-size:xx-large;
+}
+
+nav .newTweet {
+  display: flex;
+  flex-direction: column;
+  margin-left:auto;
+  font-size: x-large;
+  font-weight: 300;
+}
+
+nav .newTweet i {
+  color:crimson;
+  align-self: center;
+}
