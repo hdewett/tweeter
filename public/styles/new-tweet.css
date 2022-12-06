@@ -1,0 +1,41 @@
+.new-tweet form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.new-tweet-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0 0;
+}
+.new-tweet button {
+  font-family: 'Bungee', sans-serif;
+  background: #2C6E49;
+  color: white;
+  border: none;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+}
+
+.new-tweet textarea {
+  margin-top:2em;
+  height:2em;
+  resize: none;
+  font-weight: bold;
+  width: 100%;
+  background: transparent;
+  border:none;
+  border-bottom: 0.25em solid #2C6E49;
+}
+
+.new-tweet textarea:focus{
+  outline:none;
+}
+
+.new-tweet .counter {
+  font-family: 'Bungee', sans-serif;
+  font-size: 1.25em;
+}

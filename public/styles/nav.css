@@ -17,7 +17,7 @@ nav span.logo {
   font-size:xx-large;
 }
 
-nav .newTweet {
+nav .caption {
   display: flex;
   flex-direction: column;
   margin-left:auto;
@@ -25,7 +25,7 @@ nav .newTweet {
   font-weight: 300;
 }
 
-nav .newTweet i {
+nav .caption i {
   color:crimson;
   align-self: center;
 }
