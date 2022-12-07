@@ -1,3 +1,4 @@
+<!-- colour palette: https://coolors.co/2c6e49-4c956c-fefee3-c15838-d68c45 -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -37,7 +39,7 @@
       </span>
     </nav>
 
-    <header>
+    <header class="banner">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -45,10 +47,12 @@
       <div>
           <h2>Hilora Dewett</h2>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <!-- Creating a new tweet section -->
       <section class="new-tweet">
         <form action="/tweets" method="POST">
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text" rows="1"></textarea>
@@ -59,6 +63,28 @@
         </form>
       </section>
 
+        <!-- Tweets container -->
+      <section id="tweets-container">
+        <article class="tweet">
+          <header> 
+            <div class ="avatar">
+              <img src="https://i.imgur.com/73hZDYK.png" alt="avatar">
+              <p>Custard</p>
+            </div>
+            <p class="tweeter-handle">@ilovesteak</p>
+          </header>
+          <p>I am the best dog ever!</p>
+          <hr/>
+          <footer >
+            <p class ="date"> 10 days ago</p>
+            <div class="tweet-nav">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+            </div>
+          </footer >
+        </article>
+      </section>
     </main>
   </body>
 </html>

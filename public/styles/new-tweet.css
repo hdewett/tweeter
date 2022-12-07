@@ -14,7 +14,7 @@
 .new-tweet button {
   font-family: 'Bungee', sans-serif;
   background: #2C6E49;
-  color: white;
+  color: #FEFEE3;
   border: none;
   border-radius: 0.25em;
   padding: 0.25em 0.5em;
@@ -41,5 +41,5 @@
 }
 
 .invalid {
-  color: red;
+  color: crimson;
 }

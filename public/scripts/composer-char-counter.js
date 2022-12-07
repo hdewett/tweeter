@@ -1,16 +1,16 @@
-//charsLimit set tweet character limit, can be changed accordingly.
+//charsLimit set tweet character limit, can be changed accordingly
 const charsLimit = 140;
 
 $(document).ready(function() {
   $('#tweet-text').on('input', function() {
-    let tweetLength = charsLimit - $(this).val().length;
-    let remainingChars =  $(this).siblings().find('output');
-    remainingChars.val(tweetLength);
+    let remainingChars = charsLimit - $(this).val().length;
+    let tweetLength =  $(this).siblings().find('output');
+    tweetLength.val(remainingChars);
 
-    if (tweetLength < 0) {
-      remainingChars.addClass('invalid');
-    } else if (tweetLength >= 0) {
-      remainingChars.removeClass('invalid');
+    if (remainingChars < 0) {
+      tweetLength.addClass('invalid');
+    } else {
+      tweetLength.removeClass('invalid');
     }
 
   });

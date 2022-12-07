@@ -6,7 +6,7 @@ nav {
   top:0px;
   align-items: center;
   background-color: #2C6E49;
-  color: #FFFFFF;
+  color: #FEFEE3;
   padding: 0em 1.5em;
   z-index:1000;
   
@@ -26,6 +26,6 @@ nav .caption {
 }
 
 nav .caption i {
-  color:crimson;
+  color:#c15838;
   align-self: center;
 }
