@@ -1,8 +1,8 @@
-$(document).ready(function () {
+$(document).ready(function() {
   renderTweets(data);
 });
 
-const createTweetElement = function (tweetData) {
+const createTweetElement = function(tweetData) {
   const $tweet = $(`
   <article class="tweet">
 
@@ -18,7 +18,7 @@ const createTweetElement = function (tweetData) {
         <hr/>
 
         <footer >
-          <p class ="date">${tweetData.created_at}</p>
+          <p class ="date">${timeago.format(tweetData.created_at)}</p>
           <div class="tweet-nav">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -28,17 +28,17 @@ const createTweetElement = function (tweetData) {
 
       </article>`
 
-  )
+  );
 
   return $tweet;
 
 };
 
 //Render each tweet
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   for (const item of tweets) {
     const $tweet = createTweetElement(item);
-    $(`#tweets-container`).append($tweet)
+    $(`#tweets-container`).append($tweet);
   }
 };
 
@@ -52,22 +52,22 @@ const loadTweets = function() {
     success: function(data) {
       renderTweets(data);
     }
-  })
+  });
 };
 loadTweets();
 
 // Submit the form
-$(".new-tweet form").submit(function(event) {  
+$(".new-tweet form").submit(function(event) {
   event.preventDefault();
   // Turns a set of form data into a query string
-  const formData = ($(this).serialize()); 
+  const formData = ($(this).serialize());
 
   $.ajax({
     type: "POST",
     url: '/tweets',
     data: formData,
-    success: function (data) {
+    success: function(data) {
       loadTweets(data);
     }
-  })
+  });
 });
