@@ -57,7 +57,6 @@ const formSubmission = function() {
   event.preventDefault();
 
   const $tweetData = $(this).find("textarea")
-  console.log("WORKING")
   //validating the tweet for appropriate length
   if ($tweetData.val().length === 0) {
     alert("Tweet can't be empty!");
@@ -72,6 +71,8 @@ const formSubmission = function() {
   const data = $(this).serialize();
   $.post("/tweets", data)
     .then(function() {
+      $tweetData.val("");
+      $tweetData.trigger("input");
       loadTweets();
     })
   };
