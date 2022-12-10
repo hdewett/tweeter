@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("form").on("submit", formSubmission);
   loadTweets();
 });
 
@@ -45,24 +46,31 @@ const renderTweets = function(tweets) {
 // Fetching tweets from database and calling render func
 const loadTweets = function() {
   $.get("/tweets")
-    .then(data => {
-      renderTweets(data);
+    .then(formData => {
+      renderTweets(formData);
     });
 };
 
-
 // Submit the form
-$(".new-tweet form").submit(function(event) {
+const formSubmission = function() {
   event.preventDefault();
-  // Turns a set of form data into a query string
-  const formData = ($(this).serialize());
 
-  $.ajax({
-    type: "POST",
-    url: '/tweets',
-    data: formData,
-    success: function(data) {
-      loadTweets(data);
-    }
-  });
-});
+  const $tweetData = $(this).find("textarea")
+  console.log("WORKING")
+  //validating the tweet for appropriate length
+  if ($tweetData.val().length === 0) {
+    alert("Tweet can't be empty!");
+    return;
+  }
+
+  if ($tweetData.val().length > 140) {
+    alert("That's a little long! Keep it under 140")
+    return;
+  } 
+
+  const data = $(this).serialize();
+  $.post("/tweets", data)
+    .then(function() {
+      loadTweets();
+    })
+  };
