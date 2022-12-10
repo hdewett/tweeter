@@ -46,8 +46,8 @@ const renderTweets = function(tweets) {
 // Fetching tweets from database and calling render func
 const loadTweets = function() {
   $.get("/tweets")
-    .then(formData => {
-      renderTweets(formData);
+    .then(data => {
+      renderTweets(data);
     });
 };
 

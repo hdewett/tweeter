@@ -1,24 +1,24 @@
 [
   {
     "user": {
-      "name": "Newton",
+      "name": "Custard Dewett",
       "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "handle": "@ilovesteak"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "I'm the best dog ever!"
     },
-    "created_at": 1670466416845
+    "created_at": 1670467545163
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "Skipper Dewett",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "handle": "@foreverBread"
     },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "I'm a mean parrot and I love bread!"
     },
-    "created_at": 1670552816845
+    "created_at": 1670553945163
   }
 ]
