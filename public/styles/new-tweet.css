@@ -21,7 +21,7 @@
 }
 
 .new-tweet textarea {
-  margin-top:2em;
+  margin-top:1em;
   height:2em;
   resize: none;
   font-weight: bold;
@@ -42,4 +42,20 @@
 
 .form-invalid {
   color: crimson;
+}
+
+/* styling error message */
+#error-message {
+  margin-top: 1em;
+  color: red;
+  width: 10;
+  font-style: normal;
+  font-weight: bold;
+}
+
+#wrong-count {
+  margin-top: 1em;
+  color: red;
+  font-style: normal;
+  font-weight: bold;
 }

@@ -3,6 +3,13 @@ $(document).ready(function() {
   loadTweets();
 });
 
+
+const escapeTweet = function (tweetText) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(tweetText));
+  return div.innerHTML;
+};
+
 const createTweetElement = function(tweetData) {
   const $tweet = $(`
   <article class="tweet">
@@ -15,7 +22,7 @@ const createTweetElement = function(tweetData) {
           <p class="tweeter-handle">${tweetData.user.handle}</p>
         </header>
 
-        <p>${tweetData.content.text}</p>
+        <p>${escapeTweet(tweetData.content.text)}</p>
         <hr/>
 
         <footer >
@@ -33,6 +40,8 @@ const createTweetElement = function(tweetData) {
   return $tweet;
 
 };
+
+
 
 //Render each tweet
 const renderTweets = function(tweets) {
@@ -52,6 +61,8 @@ const loadTweets = function() {
 };
 
 
+
+
 // Submit the form
 const formSubmission = function() {
   event.preventDefault();
@@ -59,12 +70,16 @@ const formSubmission = function() {
   const $tweetData = $(this).find("textarea")
   //validating the tweet for appropriate length
   if ($tweetData.val().length === 0) {
-    alert("Tweet can't be empty!");
+    $('#error-message').text("Your tweet can't be empty!")
+    $('#error-message').slideDown("slow");
+    $('#error-message').delay(5000).slideUp("slow");
     return;
   }
 
   if ($tweetData.val().length > 140) {
-    alert("That's a little long! Keep it under 140")
+    $('#wrong-count').text("Tweet can't be longer than 140 characters!");
+    $('#wrong-count').slideDown("slow");
+    $('#wrong-count').delay(5000).slideUp("slow");
     return;
   } 
 
