@@ -68,20 +68,31 @@ const formSubmission = function() {
   event.preventDefault();
 
   const $tweetData = $(this).find("textarea")
+  const $errorBox = $("#error-box");
+  const $error = $('#error-message');
+
+
+
   //validating the tweet for appropriate length
   if ($tweetData.val().length === 0) {
-    $('#error-message').text("Your tweet can't be empty!")
-    $('#error-message').slideDown("slow");
-    $('#error-message').delay(5000).slideUp("slow");
+    $error.text("Your tweet can't be empty!")
+    $errorBox.slideDown("slow");
+    // $error.delay(5000).slideUp("slow");
     return;
   }
 
   if ($tweetData.val().length > 140) {
-    $('#wrong-count').text("Tweet can't be longer than 140 characters!");
-    $('#wrong-count').slideDown("slow");
-    $('#wrong-count').delay(5000).slideUp("slow");
+    $error.text("Tweet can't be longer than 140 characters!");
+    $errorBox.slideDown("slow");
+    // $('#wrong-count').delay(5000).slideUp("slow");
     return;
-  } 
+  }
+
+  if ($errorBox.is(":visible")) {
+    $errorBox.slideUp("fast");
+  }
+  
+
 
   const data = $(this).serialize();
   $.post("/tweets", data)

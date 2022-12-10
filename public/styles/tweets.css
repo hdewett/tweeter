@@ -25,6 +25,10 @@ article.tweet header p {
   margin: .5em;
  }
 
+article.tweet p {
+  overflow-wrap: anywhere;
+}
+
  .avatar {
   display: flex;
   align-self: flex-start;

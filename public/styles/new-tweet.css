@@ -22,7 +22,6 @@
 
 .new-tweet textarea {
   margin-top:1em;
-  height:2em;
   resize: none;
   font-weight: bold;
   width: 100%;
@@ -47,15 +46,13 @@
 /* styling error message */
 #error-message {
   margin-top: 1em;
-  color: red;
-  width: 10;
+  padding: 0.25em;
+  color: crimson;
+  border: crimson solid 4px;
   font-style: normal;
   font-weight: bold;
 }
 
-#wrong-count {
-  margin-top: 1em;
-  color: red;
-  font-style: normal;
-  font-weight: bold;
+#error-box {
+  display: none;
 }
