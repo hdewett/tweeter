@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  renderTweets(data);
+  loadTweets();
 });
 
 const createTweetElement = function(tweetData) {
@@ -27,7 +27,6 @@ const createTweetElement = function(tweetData) {
         </footer >
 
       </article>`
-
   );
 
   return $tweet;
@@ -36,25 +35,21 @@ const createTweetElement = function(tweetData) {
 
 //Render each tweet
 const renderTweets = function(tweets) {
+  const $container = $("#tweets-container")
   for (const item of tweets) {
     const $tweet = createTweetElement(item);
-    $(`#tweets-container`).append($tweet);
+    $container.append($tweet);
   }
 };
 
-// Fetching tweets from /tweets
+// Fetching tweets from database and calling render func
 const loadTweets = function() {
-  const formData = ($(this).serialize());
-  $.ajax({
-    method: "GET",
-    url: "/tweets",
-    data: formData,
-    success: function(data) {
+  $.get("/tweets")
+    .then(data => {
       renderTweets(data);
-    }
-  });
+    });
 };
-loadTweets();
+
 
 // Submit the form
 $(".new-tweet form").submit(function(event) {
