@@ -40,6 +40,6 @@
   font-size: 1.25em;
 }
 
-.invalid {
+.form-invalid {
   color: crimson;
 }
