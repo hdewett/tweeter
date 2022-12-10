@@ -36,10 +36,10 @@ const createTweetElement = function(tweetData) {
 
 //Render each tweet
 const renderTweets = function(tweets) {
-  const $container = $("#tweets-container")
+  const $container = $("#tweets-container").empty();
   for (const item of tweets) {
     const $tweet = createTweetElement(item);
-    $container.append($tweet);
+    $container.prepend($tweet);
   }
 };
 
@@ -50,6 +50,7 @@ const loadTweets = function() {
       renderTweets(formData);
     });
 };
+
 
 // Submit the form
 const formSubmission = function() {
