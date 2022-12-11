@@ -1,5 +1,4 @@
 .new-tweet {
-  display: none;
 }
 
 .new-tweet form {
@@ -29,6 +28,7 @@
   color: #2C6E49;
   border: #2C6E49 solid;
   border-radius: 0.3em;
+  cursor: pointer;
 }
 
 .new-tweet textarea {
@@ -60,6 +60,8 @@
   padding: 0.25em;
   color: crimson;
   border: crimson solid 4px;
+  font-family: Bungee;
+  font-size: .75em;
   font-style: normal;
   font-weight: bold;
 }
