@@ -41,7 +41,9 @@ strong {
 }
 
 
-.showScrollToTop{
+
+
+.scrollToTop{
   display: unset;
   background-color: #2C6E49;
   color: #FEFEE3;
@@ -53,9 +55,11 @@ strong {
   bottom:1em;
 }
 
-.hideScrollToTop {
+.hideElement {
   display: none;
 }
+
+
 
 
 

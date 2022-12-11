@@ -1,11 +1,9 @@
-const scroller = document.querySelector(".scrollToTop")
+const scroller = document.querySelector(".scrollToTop");
 
 window.onscroll = function () {
-    const top = window.scrollY
-
-    if (top >= 100) {
-      scroller.classList.add("showScrollToTop")
+    if (window.scrollY >= 100) {
+      scroller.classList.remove("hideElement");
     } else {
-      scroller.classList.remove("showScrollToTop")
+      scroller.classList.add("hideElement");
     }
 };
