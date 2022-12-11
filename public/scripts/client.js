@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $("form").on("submit", formSubmission);
+  $(".caption").on("click", composeTweet)
   loadTweets();
 });
 
@@ -10,8 +11,16 @@ const escapeTweet = function (tweetText) {
   return div.innerHTML;
 };
 
+
 const composeTweet = function() {
-  
+  const $newTweet = $(".new-tweet");
+  const $newTweetTextArea = $(".new-tweet textarea");
+  if ($newTweet.is(":visible")) {
+    $newTweet.slideUp("slow");
+  } else {
+    $newTweet.slideDown("slow");
+    $newTweetTextArea.focus();
+  }
 }
 
 

@@ -26,7 +26,21 @@ nav .caption {
   
 }
 
+nav .caption:hover{
+  cursor: pointer;
+}
+
 nav .caption i {
   color:#c15838;
   align-self: center;
+  animation: bounce 0.4s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+  0%{
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0.5em);
+  }
 }
