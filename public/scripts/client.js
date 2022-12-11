@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $("form").on("submit", formSubmission);
-  $(".caption").on("click", composeTweet)
+  $(".caption").on("click", composeTweet);
+  $(".scrollToTop").on("click", scrollCompose);
   loadTweets();
 });
 
@@ -12,7 +13,14 @@ const escapeTweet = function (tweetText) {
 };
 
 
-const composeTweet = function() {
+const scrollCompose = function() {
+  const $newTweet = $(".new-tweet");
+  const $newTweetTextArea = $(".new-tweet textarea");
+  $newTweet.slideDown("slow");
+  $newTweetTextArea.focus();
+}
+
+const composeTweet = function(event) {
   const $newTweet = $(".new-tweet");
   const $newTweetTextArea = $(".new-tweet textarea");
   if ($newTweet.is(":visible")) {

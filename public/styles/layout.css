@@ -59,6 +59,25 @@ strong {
   display: none;
 }
 
+@media screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  body .banner{
+    margin: calc(120px + 2em) 1em 0 1em;
+    max-width: 500px;
+  }
+
+  .container {
+    margin: 120px 1em 0 1em;
+    min-width: 500px;
+  }
+
+  
+}
+
 
 
 
