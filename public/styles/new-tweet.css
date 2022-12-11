@@ -1,3 +1,7 @@
+.new-tweet {
+  display: none;
+}
+
 .new-tweet form {
   width: 100%;
   display: flex;
@@ -15,9 +19,16 @@
   font-family: 'Bungee', sans-serif;
   background: #2C6E49;
   color: #FEFEE3;
-  border: none;
-  border-radius: 0.25em;
+  border: #2C6E49 solid;
+  border-radius: 0.3em;
   padding: 0.25em 0.5em;
+}
+
+.new-tweet button:hover {
+  background: #FEFEE3;
+  color: #2C6E49;
+  border: #2C6E49 solid;
+  border-radius: 0.3em;
 }
 
 .new-tweet textarea {

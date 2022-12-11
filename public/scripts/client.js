@@ -10,6 +10,11 @@ const escapeTweet = function (tweetText) {
   return div.innerHTML;
 };
 
+const composeTweet = function() {
+  
+}
+
+
 const createTweetElement = function(tweetData) {
   const $tweet = $(`
   <article class="tweet">
@@ -21,10 +26,10 @@ const createTweetElement = function(tweetData) {
           </div>
           <p class="tweeter-handle">${tweetData.user.handle}</p>
         </header>
-
+        <body>
         <p>${escapeTweet(tweetData.content.text)}</p>
         <hr/>
-
+        </body>
         <footer >
           <p class ="date">${timeago.format(tweetData.created_at)}</p>
           <div class="tweet-nav">
@@ -92,8 +97,6 @@ const formSubmission = function() {
     $errorBox.slideUp("fast");
   }
   
-
-
   const data = $(this).serialize();
   $.post("/tweets", data)
     .then(function() {
@@ -102,3 +105,4 @@ const formSubmission = function() {
       loadTweets();
     })
   };
+

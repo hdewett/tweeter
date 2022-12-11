@@ -3,11 +3,14 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
-  box-sizing: border-box;
-}
+
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 /*
@@ -36,4 +39,23 @@ strong {
   width: 90%;
   align-self: center;
 }
+
+
+.showScrollToTop{
+  display: unset;
+  background-color: #2C6E49;
+  color: #FEFEE3;
+  width:fit-content;
+  padding:.7em;
+  border-radius: 45%;
+  position: fixed;
+  right: 1em;
+  bottom:1em;
+}
+
+.hideScrollToTop {
+  display: none;
+}
+
+
 
