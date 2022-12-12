@@ -4,13 +4,13 @@ $(document).ready(function() {
   $(window).on("scroll", showScrollToTop);
 });
 
-const showScrollToTop = function () {
+const showScrollToTop = function() {
   const $scroller = $(".scrollToTop");
-    if ($(window).scrollTop() >= 100) {
-      $scroller.removeClass("hideElement");
-    } else {
-      $scroller.addClass("hideElement");
-    }
+  if ($(window).scrollTop() >= 100) {
+    $scroller.removeClass("hideElement");
+  } else {
+    $scroller.addClass("hideElement");
+  }
 };
 
 const scrollCompose = function() {
@@ -18,9 +18,9 @@ const scrollCompose = function() {
   const $newTweetTextArea = $(".new-tweet textarea");
   $newTweet.slideDown("slow");
   $newTweetTextArea.focus();
-}
+};
 
-const composeTweet = function(event) {
+const composeTweet = function() {
   const $newTweet = $(".new-tweet");
   const $newTweetTextArea = $(".new-tweet textarea");
   if ($newTweet.is(":visible")) {
@@ -29,4 +29,4 @@ const composeTweet = function(event) {
     $newTweet.slideDown("slow");
     $newTweetTextArea.focus();
   }
-}
+};

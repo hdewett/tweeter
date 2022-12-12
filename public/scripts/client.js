@@ -3,7 +3,7 @@ $(document).ready(function() {
   loadTweets();
 });
 
-const escapeTweet = function (tweetText) {
+const escapeTweet = function(tweetText) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(tweetText));
   return div.innerHTML;
@@ -89,5 +89,5 @@ const formSubmission = function(event) {
       $tweetData.val("");
       $tweetData.trigger("input");
       loadTweets();
-    })
-  };
+    });
+};

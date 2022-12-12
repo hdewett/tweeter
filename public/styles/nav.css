@@ -26,6 +26,7 @@ nav .caption {
 
 nav .caption:hover{
   cursor: pointer;
+  color: #d68c45;
 }
 
 nav .caption i {
