@@ -18,7 +18,8 @@ Tweeter is a simple, single-page Twitter clone. It uses HTML, CSS, JS, jQuery an
 
 ## Final Product
 
-Image of Mobile View
+Image of Mobile View<br/>
+
 !["Image of Mobile View"](https://github.com/hdewett/tweeter/blob/master/public/images/MobileView.png)
 
 Image of Desktop View
