@@ -18,12 +18,10 @@ Tweeter is a simple, single-page Twitter clone. It uses HTML, CSS, JS, jQuery an
 
 ## Final Product
 
-## Dependencies
-
-!["Image of Mobile View"](link)
-!["Image of Desktop View"](link)
-!["Image of Tweet Being Composed"](link)
-!["Image of Validation Error for a tweet that is too long"](link)
+!["Image of Mobile View"](https://github.com/hdewett/tweeter/blob/master/public/images/MobileView.png)
+!["Image of Desktop View"](https://github.com/hdewett/tweeter/blob/master/public/images/DesktopView.png)
+!["Image of Tweet Being Composed in Mobile"](https://github.com/hdewett/tweeter/blob/master/public/images/TweetComposed.png)
+!["Image of Validation Error for a tweet that is too long in Desktop"](https://github.com/hdewett/tweeter/blob/master/public/images/ValidationError.png)
 
 ## Dependencies
 
