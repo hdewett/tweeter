@@ -1,36 +1,13 @@
 $(document).ready(function() {
   $("form").on("submit", formSubmission);
-  $(".caption").on("click", composeTweet);
-  $(".scrollToTop").on("click", scrollCompose);
   loadTweets();
 });
-
 
 const escapeTweet = function (tweetText) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(tweetText));
   return div.innerHTML;
 };
-
-
-const scrollCompose = function() {
-  const $newTweet = $(".new-tweet");
-  const $newTweetTextArea = $(".new-tweet textarea");
-  $newTweet.slideDown("slow");
-  $newTweetTextArea.focus();
-}
-
-const composeTweet = function(event) {
-  const $newTweet = $(".new-tweet");
-  const $newTweetTextArea = $(".new-tweet textarea");
-  if ($newTweet.is(":visible")) {
-    $newTweet.slideUp("slow");
-  } else {
-    $newTweet.slideDown("slow");
-    $newTweetTextArea.focus();
-  }
-}
-
 
 const createTweetElement = function(tweetData) {
   const $tweet = $(`
@@ -63,8 +40,6 @@ const createTweetElement = function(tweetData) {
 
 };
 
-
-
 //Render each tweet
 const renderTweets = function(tweets) {
   const $container = $("#tweets-container").empty();
@@ -82,38 +57,32 @@ const loadTweets = function() {
     });
 };
 
-
-
-
 // Submit the form
-const formSubmission = function() {
+const formSubmission = function(event) {
+
   event.preventDefault();
 
-  const $tweetData = $(this).find("textarea")
+  const $tweetData = $(this).find("textarea");
   const $errorBox = $("#error-box");
   const $error = $('#error-message');
 
-
+  if ($errorBox.is(":visible")) {
+    $errorBox.slideUp("fast");
+  }
 
   //validating the tweet for appropriate length
   if ($tweetData.val().length === 0) {
-    $error.text("Your tweet can't be empty!")
+    $error.text("Your tweet can't be empty!");
     $errorBox.slideDown("slow");
-    // $error.delay(5000).slideUp("slow");
     return;
   }
 
   if ($tweetData.val().length > 140) {
     $error.text("Tweet can't be longer than 140 characters!");
     $errorBox.slideDown("slow");
-    // $('#wrong-count').delay(5000).slideUp("slow");
     return;
   }
 
-  if ($errorBox.is(":visible")) {
-    $errorBox.slideUp("fast");
-  }
-  
   const data = $(this).serialize();
   $.post("/tweets", data)
     .then(function() {
@@ -122,4 +91,3 @@ const formSubmission = function() {
       loadTweets();
     })
   };
-

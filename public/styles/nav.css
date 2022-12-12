@@ -9,7 +9,6 @@ nav {
   color: #FEFEE3;
   padding: 0em 1.5em;
   z-index:1000;
-  
 }
 
 nav span.logo {
@@ -23,7 +22,6 @@ nav .caption {
   margin-left:auto;
   font-size: x-large;
   font-weight: 300;
-  
 }
 
 nav .caption:hover{

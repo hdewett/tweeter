@@ -30,7 +30,6 @@ strong {
   font-weight: bold; 
 }
 
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -39,9 +38,6 @@ strong {
   width: 90%;
   align-self: center;
 }
-
-
-
 
 .scrollToTop{
   display: unset;
@@ -74,11 +70,4 @@ strong {
     margin: 120px 1em 0 1em;
     min-width: 500px;
   }
-
-  
 }
-
-
-
-
-
